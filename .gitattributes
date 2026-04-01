@@ -1,0 +1,5 @@
+* text=auto encoding=utf-8
+*.md text=auto encoding=utf-8
+*.yml text=auto encoding=utf-8
+*.yaml text=auto encoding=utf-8
+*.json text=auto encoding=utf-8

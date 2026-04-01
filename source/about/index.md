@@ -25,8 +25,23 @@ top_img: /img/guanzhou.jpg
 - **Database**: MySQL, Redis
 - **Middleware**: RabbitMQ, Elasticsearch
 
+### 测试开发 | 测试技术栈 Test & DevOps
+- **测试类型**: 功能测试、接口测试、自动化测试、性能测试
+- **接口测试**: Postman, JMeter, RestAssured
+- **自动化测试**: Selenium, Cypress, Playwright
+- **测试框架**: pytest, TestNG, JUnit 5
+- **持续集成**: Jenkins, GitLab CI/CD
+- **接口 Mock**: MockMvc, WireMock, Moco
+- **性能测试**: JMeter, LoadRunner
+
+### AI & 大模型应用 | AI & LLM
+- **大模型调用**: OpenAI API, 通义千问，文心一言,KiMi,Claude Code,DeepSeek
+- **AI 开发**: LangChain, Prompt 工程,SpringAI,Skills
+- **数据处理**: Python
+- **AI 工具**: Claude, ChatGPT, Cursor,Copilot,Trae,Coze,Dify
+
 ### 工具 Tools
-- **IDE**: IntelliJ IDEA, VS Code
+- **IDE**: IntelliJ IDEA, VS Code, PyCharm
 - **Version Control**: Git
 - **Build**: Maven, Gradle
 

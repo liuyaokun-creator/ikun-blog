@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "**/*.html": {
+      "maxDuration": 10
+    }
+  },
+  "env": {
+    "VERCEL_CLI_DISABLE_TELEMETRY": "1"
+  },
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}
