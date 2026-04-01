@@ -1,0 +1,86 @@
+/* 首页和页面头部背景处理 */
+#page-header {
+  background-color: transparent !important;
+  /* 确保文字有阴影以提高可读性 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 首页特定的背景图处理 - 只在首页生效 */
+#page-header.full_page {
+  /* background-image: url('/img/preview.jpg') !important; */
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* 为首页背景添加半透明遮罩，解决图片颜色淡的问题并提高文字对比度 */
+#page-header.full_page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* 黑色遮罩，30%透明度 */
+  z-index: 0;
+}
+
+/* 确保首页文字在遮罩之上 */
+#site-info {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+}
+
+/* 文章详情页和其他页面的头部背景处理 */
+#page-header:not(.full_page) {
+  /* 这里不需要强制背景图，因为主题会根据 top_img 或 default_top_img 自动设置 */
+}
+
+/* 文章详情页的遮罩，提高文字可读性 */
+#page-header:not(.full_page)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* 稍深的遮罩，40%透明度 */
+  z-index: 0;
+}
+
+/* 确保文章标题等信息在遮罩之上 */
+#page-header:not(.full_page) #post-info {
+  z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  padding: 0 8%;
+  width: 100%;
+}
+
+/* 统一设置头部文字颜色为白色，配合遮罩和阴影使用 */
+#site-title,
+#site-subtitle,
+#post-info .post-title,
+#post-info .post-meta {
+  color: #fff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 导航栏背景渐变，防止在图片上看不清 */
+#nav {
+  background: rgba(0, 0, 0, 0.2) !important;
+  transition: background 0.3s;
+}
+
+#nav.fixed {
+  background: rgba(255, 255, 255, 0.9) !important; /* 滚动后变白 */
+}
+
+
+#loading-box.loaded .loading-left-bg,
+#loading-box.loaded .loading-right-bg {
+  pointer-events: none !important;
+}
+
+
