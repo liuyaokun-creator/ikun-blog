@@ -1,12 +1,7 @@
 {
-  "functions": {
-    "**/*.html": {
-      "maxDuration": 10
-    }
-  },
-  "env": {
-    "VERCEL_CLI_DISABLE_TELEMETRY": "1"
-  },
+  "framework": null,
+  "buildCommand": "hexo clean && hexo g",
+  "outputDirectory": "public",
   "git": {
     "deploymentEnabled": {
       "main": true
