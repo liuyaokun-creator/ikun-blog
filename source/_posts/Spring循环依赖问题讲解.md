@@ -4,6 +4,8 @@ date: 2024-10-10 08:00:00
 updated: 2024-10-10 08:00:00
 tags: [Spring, 循环依赖, Circular Dependency, IOC, DI]
 categories: Spring
+cover: /img/nailong.jpg
+top_img: /img/nailong.jpg
 ---
 
 # Spring循环依赖问题讲解

@@ -4,6 +4,8 @@ date: 2024-10-15 08:00:00
 updated: 2024-10-15 08:00:00
 tags: [Spring, 循环依赖, 二级缓存, 三级缓存, Circular Dependency, IOC]
 categories: Spring
+cover: /img/caihong.jpg
+top_img: /img/caihong.jpg
 ---
 
 # Spring解决循环依赖时为什么需要二级缓存
