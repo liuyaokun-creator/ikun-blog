@@ -103,6 +103,26 @@ cover:
   default_cover:
     # - xxx.jpg
 
+flink:
+  enable: true
+  link_list:
+    - name: 小林coding
+      link: https://xiaolincoding.com/
+      avatar: /img/xiaolin.png  # <--- 改这里！
+      descr: 图解计算机基础
+    - name: CSDN
+      link: https://www.csdn.net/
+      avatar: /img/csdn.png
+      descr: 专业开发者社区
+    - name: Spring Boot
+      link: https://spring.io/projects/spring-boot
+      avatar: /img/springboot.png  # <--- 改这里！
+      descr: Spring Boot 框架
+    - name: Stack Overflow
+      link: https://stackoverflow.com/
+      avatar: /img/R-C.png  # <--- 改这里！
+      descr: 全球最大的程序员问答社区
+
 # Replace Broken Images
 error_img:
   flink: /img/friend_404.gif
