@@ -24,11 +24,13 @@
                 lists.sort(() => Math.random() - 0.5)
               }
               for(let j = 0; j < lists.length; j++){
+                // 👇 关键：用 Pug 提前把 avatar 路径解析好，传给 JS！
+                const avatarUrl = "!{url_for(lists[j].avatar)}"
                 listResult += `
                   <div class="flink-list-item">
                     <a href="${lists[j].link}" title="${lists[j].name}" target="_blank">
                       <div class="flink-item-icon">
-                        <img class="no-lightbox" src="${lists[j].avatar}" onerror='this.onerror=null;this.src="!{url_for(theme.error_img.flink)}"' alt="${lists[j].name}" />
+                        <img class="no-lightbox" src="${avatarUrl}" onerror='this.onerror=null;this.src="!{url_for(theme.error_img.flink)}"' alt="${lists[j].name}" />
                       </div>
                       <div class="flink-item-name">${lists[j].name}</div>
                       <div class="flink-item-desc" title="${lists[j].descr}">${lists[j].descr}</div>
@@ -64,11 +66,13 @@
 
           each j in i.link_list
             -
+              // 👇 关键：Pug 里直接用 url_for 解析，再拼到字符串里
+              const avatarUrl = url_for(j.avatar)
               listResult += `
                 <div class="flink-list-item">
                   <a href="${j.link}" title="${j.name}" target="_blank">
                     <div class="flink-item-icon">
-                      <img class="no-lightbox" src="${j.avatar}" onerror='this.onerror=null;this.src="${url_for(theme.error_img.flink)}"' alt="${j.name}" />
+                      <img class="no-lightbox" src="${avatarUrl}" onerror='this.onerror=null;this.src="${url_for(theme.error_img.flink)}"' alt="${j.name}" />
                     </div>
                     <div class="flink-item-name">${j.name}</div>
                     <div class="flink-item-desc" title="${j.descr}">${j.descr}</div>

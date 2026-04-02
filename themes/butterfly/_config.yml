@@ -106,21 +106,58 @@ cover:
 flink:
   enable: true
   link_list:
+    # 小林coding（用博主官网在线头像）
     - name: 小林coding
       link: https://xiaolincoding.com/
-      avatar: https://lyk-blog.us.ci/img/xiaolin.png  # <--- 改这里！
+      avatar: https://assets.xiaolincoding.com/logo.png
       descr: 图解计算机基础
+
+    # 蒜香排骨 (Gitee)（用Gitee官方在线Logo）
+    - name: 蒜香排骨 (Gitee)
+      link: https://gitee.com/liuyaokun-creator
+      avatar: https://gitee.com/favicon.ico
+      descr: 我的 Gitee 代码仓库
+
+    # 蒜香排骨 (GitHub)（用GitHub官方在线Logo）
+    - name: 蒜香排骨 (GitHub)
+      link: https://github.com/liuyaokun-creator
+      avatar: https://github.com/favicon.ico
+      descr: 我的 GitHub 代码仓库
+
+    # CSDN（用CSDN官方在线Logo）
     - name: CSDN
       link: https://www.csdn.net/
-      avatar: https://lyk-blog.us.ci/img/csdn.png
+      avatar: https://csdnimg.cn/public/favicon.ico
       descr: 专业开发者社区
+
+    # Java（用Java官方在线Logo）
+    - name: Java
+      link: https://www.oracle.com/java/
+      avatar: https://www.oracle.com/a/ocom/img/c71-java-logo.png
+      descr: Java 编程语言官网
+
+    # Vue.js（用Vue官方在线Logo，你截图里已经正常显示了！）
+    - name: Vue.js
+      link: https://vuejs.org/
+      avatar: https://vuejs.org/images/logo.png
+      descr: 渐进式 JavaScript 框架
+
+    # MDN Web Docs（用MDN官方在线Logo）
+    - name: MDN Web Docs
+      link: https://developer.mozilla.org/
+      avatar: https://developer.mozilla.org/favicon-48x48.cbbd160b.png
+      descr: Web 开发技术文档
+
+    # Spring Boot（用Spring官方在线Logo）
     - name: Spring Boot
       link: https://spring.io/projects/spring-boot
-      avatar: https://lyk-blog.us.ci/img/springboot.png  # <--- 改这里！
+      avatar: https://spring.io/favicon.ico
       descr: Spring Boot 框架
+
+    # Stack Overflow（用Stack Overflow官方在线Logo）
     - name: Stack Overflow
       link: https://stackoverflow.com/
-      avatar: https://lyk-blog.us.ci/img/R-C.png  # <--- 改这里！
+      avatar: https://stackoverflow.com/favicon.ico
       descr: 全球最大的程序员问答社区
 
 # Replace Broken Images
