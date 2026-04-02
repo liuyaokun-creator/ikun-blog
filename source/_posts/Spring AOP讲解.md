@@ -4,8 +4,8 @@ date: 2024-09-24 08:00:00
 updated: 2024-09-24 08:00:00
 tags: [Spring, AOP, 面向切面编程, Aspect, 切面]
 categories: Spring
-cover: /img/img_3.jpg
-top_img: /img/img_3.jpg
+cover: /img/img_3.png
+top_img: /img/img_3.png
 ---
 
 # Spring AOP讲解

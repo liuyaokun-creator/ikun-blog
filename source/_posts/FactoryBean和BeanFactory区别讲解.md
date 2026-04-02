@@ -4,8 +4,8 @@ date: 2024-09-12 08:00:00
 updated: 2024-09-12 08:00:00
 tags: [Spring, FactoryBean, BeanFactory, IOC, DI]
 categories: Spring
-cover: /img/img_1.jpg
-top_img: /img/img_1.jpg
+cover: /img/img_1.png
+top_img: /img/img_1.png
 ---
 
 # FactoryBean和BeanFactory区别讲解

@@ -4,8 +4,8 @@ date: 2024-09-18 08:00:00
 updated: 2024-09-18 08:00:00
 tags: [Spring, 注解, Annotation, IOC, DI]
 categories: Spring
-cover: /img/img_2.jpg
-top_img: /img/img_2.jpg
+cover: /img/img_2.png
+top_img: /img/img_2.png
 ---
 
 # Spring常用注解讲解
