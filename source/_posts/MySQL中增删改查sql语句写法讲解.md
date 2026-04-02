@@ -4,6 +4,8 @@ date: 2024-11-03 08:00:00
 updated: 2024-11-03 08:00:00
 tags: [MySQL, SQL, 增删改查, 数据库, Database, CRUD]
 categories: 数据库
+cover: /img/plane.jpg
+top_img: /img/plane.jpg
 ---
 
 # MySQL中增删改查SQL语句写法讲解
