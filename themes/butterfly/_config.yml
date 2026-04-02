@@ -1073,6 +1073,13 @@ CDN:
   # For example: https://cdn.staticfile.org/${cdnjs_name}/${version}/${min_cdnjs_file}
   custom_format:
 
+asset_img:
+  enable: true
+  # 这里填你的博客域名，让图片变成绝对路径
+  prefix: https://lyk-blog.us.ci
+
+
+
   option:
     # abcjs_basic_js:
     # activate_power_mode:
