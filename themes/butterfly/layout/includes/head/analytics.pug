@@ -1,3 +1,4 @@
+//- 百度统计
 if theme.baidu_analytics
   script.
     var _hmt = _hmt || [];
@@ -11,6 +12,7 @@ if theme.baidu_analytics
       _hmt.push(['_trackPageview',window.location.pathname])
     }, 'baidu_analytics')
 
+//- Google Analytics
 if theme.google_analytics
   script(async src=`https://www.googletagmanager.com/gtag/js?id=${theme.google_analytics}`)
   script.
@@ -22,9 +24,11 @@ if theme.google_analytics
       gtag('config', '!{theme.google_analytics}', {'page_path': window.location.pathname})
     }, 'google_analytics')
 
+//- Cloudflare 统计
 if theme.cloudflare_analytics
   script(defer data-pjax src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon=`{"token": "${theme.cloudflare_analytics}"}`)
 
+//- Microsoft Clarity
 if theme.microsoft_clarity
   script.
     (function(c,l,a,r,i,t,y){
@@ -33,6 +37,7 @@ if theme.microsoft_clarity
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "!{theme.microsoft_clarity}");
 
+//- Google Tag Manager
 if (theme.google_tag_manager && theme.google_tag_manager.tag_id)
   script.
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -43,3 +48,17 @@ if (theme.google_tag_manager && theme.google_tag_manager.tag_id)
     btf.addGlobalFn('pjaxComplete', () => {
       dataLayer.push({'event': 'pjaxComplete', 'page_title': document.title, 'page_location': location.href, 'page_path': window.location.pathname})
     }, 'google_tag_manager')
+
+//- Vercel Web Analytics 统计（修复Pjax + 兼容微信浏览器）
+script(src="https://cdn.jsdelivr.net/npm/@vercel/analytics@1.4.1/dist/index.umd.js")
+script.
+    // 初始化
+    function initVercelAnalytics() {
+        window.vercelAnalytics.inject();
+    }
+    // 首次加载
+    initVercelAnalytics();
+    // Pjax 切换后重新初始化
+    btf.addGlobalFn('pjaxComplete', () => {
+        initVercelAnalytics();
+    }, 'vercel_analytics');
