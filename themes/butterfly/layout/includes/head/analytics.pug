@@ -49,39 +49,14 @@ if (theme.google_tag_manager && theme.google_tag_manager.tag_id)
       dataLayer.push({'event': 'pjaxComplete', 'page_title': document.title, 'page_location': location.href, 'page_path': window.location.pathname})
     }, 'google_tag_manager')
 
-//- Vercel Web Analytics 统计（官方CDN+异步加载+Pjax兼容）
-script.
-  // 用Vercel官方CDN，确保100%可访问
-  function loadVercelScript() {
-    return new Promise((resolve) => {
-      const script = document.createElement('script');
-      // 官方稳定CDN，无版本号，自动拉取最新
-      script.src = 'https://unpkg.com/@vercel/analytics@latest/dist/index.umd.js';
-      script.onload = () => resolve(window.vercelAnalytics);
-      script.onerror = () => {
-        // 备用CDN，防止主CDN失败
-        const backupScript = document.createElement('script');
-        backupScript.src = 'https://cdn.jsdelivr.net/npm/@vercel/analytics@latest/dist/index.umd.js';
-        backupScript.onload = () => resolve(window.vercelAnalytics);
-        document.head.appendChild(backupScript);
-      };
-      document.head.appendChild(script);
-    });
-  }
-
-  // 初始化统计
-  async function initVercelAnalytics() {
-    const analytics = await loadVercelScript();
-    if (analytics) {
-      analytics.inject();
-      console.log('Vercel Analytics 上报成功');
-    }
-  }
-
-  // 首次加载
-  initVercelAnalytics();
-
-  // Pjax切换后重新初始化
-  btf.addGlobalFn('pjaxComplete', () => {
-    initVercelAnalytics();
-  }, 'vercel_analytics');
+//- Vercel Web Analytics 官方原生ESM版（零404+Pjax兼容）
+script(type="module")
+  | import { inject } from 'https://esm.sh/@vercel/analytics@latest';
+  |
+  | // 首次加载上报
+  | inject();
+  |
+  | // Pjax页面切换后重新上报
+  | btf.addGlobalFn('pjaxComplete', () => {
+  |   inject();
+  | }, 'vercel_analytics');
