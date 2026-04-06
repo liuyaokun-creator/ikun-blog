@@ -49,16 +49,28 @@ if (theme.google_tag_manager && theme.google_tag_manager.tag_id)
       dataLayer.push({'event': 'pjaxComplete', 'page_title': document.title, 'page_location': location.href, 'page_path': window.location.pathname})
     }, 'google_tag_manager')
 
-//- Vercel Web Analytics 统计（修复Pjax + 兼容微信浏览器）
-script(src="https://cdn.jsdelivr.net/npm/@vercel/analytics@1.4.1/dist/index.umd.js")
+//- Vercel Web Analytics 统计（修复异步加载+Pjax兼容）
 script.
-    // 初始化
-    function initVercelAnalytics() {
-        window.vercelAnalytics.inject();
-    }
-    // 首次加载
+  // 等待脚本加载完成后再初始化
+  function loadVercelScript() {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/@vercel/analytics@1.4.1/dist/index.umd.js';
+      script.onload = () => resolve(window.vercelAnalytics);
+      document.head.appendChild(script);
+    });
+  }
+
+  // 初始化统计
+  async function initVercelAnalytics() {
+    const analytics = await loadVercelScript();
+    analytics.inject();
+  }
+
+  // 首次加载
+  initVercelAnalytics();
+
+  // Pjax切换后重新初始化
+  btf.addGlobalFn('pjaxComplete', () => {
     initVercelAnalytics();
-    // Pjax 切换后重新初始化
-    btf.addGlobalFn('pjaxComplete', () => {
-        initVercelAnalytics();
-    }, 'vercel_analytics');
+  }, 'vercel_analytics');
