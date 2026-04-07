@@ -25,7 +25,9 @@ Linux常用命令是软件测试工程师在测试过程中经常使用的工具
 1\. 实时日志监控
 
 ```bash
-tail -f /var/log/app/error.log  tail -f app.log | grep "ERROR"  tail -n 100 app.log | grep -C 5 "Exception"  
+tail -f /var/log/app/error.log  
+tail -f app.log | grep "ERROR"  
+tail -n 100 app.log | grep -C 5 "Exception"  
 ```
 
 2\. 日志统计与过滤
